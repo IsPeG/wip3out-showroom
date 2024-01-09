@@ -22,6 +22,7 @@
 
 body {
   background-color: var(--background-color-primary);
+  overflow-x: hidden;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -52,9 +53,20 @@ body {
 
 .hero-section {
   display: block;
-  background-color: var(--background-color-primary);
+  /* background-color: var(--background-color-primary); */
   height: 60rem;
   margin: 3rem;
+}
+
+.hero-section::after {
+  background-image: url("./assets/images/pattern.png");
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
 }
 
 .hero-section-title {
@@ -85,15 +97,31 @@ body {
   letter-spacing: 0.1rem;
 }
 
+.hero-section-subtitle-container {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.hero-section-subtitle-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hero-section-subtitle-icons-container > img {
+  margin: 0 0.8rem 0.2rem 0;
+}
+
 .hero-section-hbars-container {
   position: relative;
   margin-top: 3rem;
-  left: -5rem;
+  right: 3rem;
   width: 100%;
 }
 
 .hero-section-hbars-container > div {
-  clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%); */
   position: relative;
   z-index: 888;
   margin-bottom: 1rem;
@@ -103,46 +131,164 @@ body {
 
 @keyframes bar-1 {
   0% {
-    left: -40rem;
+    width: 40%;
+  }
+  25% {
+    width: 20%;
   }
   50% {
-    left: 0;
+    width: 6%;
+  }
+  75% {
+    width: 75%;
   }
   100% {
-    left: -40rem;
+    width: 40%;
   }
 }
 @keyframes bar-2 {
   0% {
-    left: -55rem;
+    width: 40%;
+  }
+  25% {
+    width: 20%;
   }
   50% {
-    left: 0;
+    width: 6%;
+  }
+  75% {
+    width: 75%;
   }
   100% {
-    left: -55rem;
+    width: 40%;
   }
 }
 @keyframes bar-3 {
   0% {
-    left: -20rem;
+    width: 40%;
+  }
+  25% {
+    width: 20%;
   }
   50% {
-    left: 0;
+    width: 6%;
+  }
+  75% {
+    width: 75%;
   }
   100% {
-    left: -20rem;
+    width: 40%;
   }
 }
 
 .hero-section-hbars-container > div:nth-child(1) {
-  animation: bar-1 5s infinite;
+  animation: bar-1 14s infinite;
 }
 
 .hero-section-hbars-container > div:nth-child(2) {
-  animation: bar-2 10s infinite;
+  animation: bar-3 10s infinite;
 }
 
 .hero-section-hbars-container > div:nth-child(3) {
-  animation: bar-3 7s infinite;
+  animation: bar-2 7s infinite;
+}
+
+.hero-section-hbars-container > div:nth-child(4) {
+  animation: bar-1 3s infinite;
+}
+
+.hero-section-hbars-container > div:nth-child(5) {
+  animation: bar-2 6s infinite;
+}
+
+.hero-section-hbars-container-inverse {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  left: 3rem;
+  top: -12rem;
+}
+
+.hero-section-hbars-container-inverse > div {
+  float: right;
+  position: relative;
+  /* clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%); */
+  z-index: 887;
+  margin-bottom: 1rem;
+  height: 5rem;
+  background-color: var(--background-color-secondary);
+}
+
+.hero-section-hbars-container-inverse > div:nth-child(1) {
+  animation: bar-3-rev 7s infinite;
+}
+
+.hero-section-hbars-container-inverse > div:nth-child(2) {
+  animation: bar-2-rev 10s infinite;
+}
+
+.hero-section-hbars-container-inverse > div:nth-child(3) {
+  animation: bar-1-rev 14s infinite;
+}
+
+.hero-section-hbars-container-inverse > div:nth-child(4) {
+  animation: bar-3-rev 10s infinite;
+}
+
+.hero-section-hbars-container-inverse > div:nth-child(5) {
+  animation: bar-1-rev 14s infinite;
+}
+
+@keyframes bar-1-rev {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 20%;
+  }
+  50% {
+    width: 6%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes bar-2-rev {
+  0% {
+    width: 40%;
+  }
+  25% {
+    width: 20%;
+  }
+  50% {
+    width: 6%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+@keyframes bar-3-rev {
+  0% {
+    width: 40%;
+  }
+  25% {
+    width: 20%;
+  }
+  50% {
+    width: 6%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 40%;
+  }
 }
