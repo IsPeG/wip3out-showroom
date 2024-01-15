@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 import feisarIcon from "../assets/images/teams_icons/feisar.png";
 import goteki45Icon from "../assets/images/teams_icons/goteki45.png";
@@ -33,20 +33,22 @@ export default function Hero() {
 
       <hr />
 
-      <div className="hero-section-hbars-container">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <div style={{ position: "relative" }}>
+        <div className="hero-section-hbars-container">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
 
-      <div className="hero-section-hbars-container-inverse">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className="hero-section-hbars-container-inverse">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </section>
   );

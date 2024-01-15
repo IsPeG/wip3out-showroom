@@ -8,6 +8,8 @@
   --background-color-primary: #6b6259;
   --background-color-secondary: #4b463e;
   --text-color-primary: #dbd9ce;
+
+  --bar-aniamtion-duration: 3s;
 }
 
 @font-face {
@@ -20,8 +22,13 @@
   src: url("assets/fonts/WO3Angular.ttf");
 }
 
+@font-face {
+  font-family: "FX300Angular";
+  src: url("assets/fonts/FX300Angular.ttf");
+}
+
 body {
-  background-color: var(--background-color-primary);
+  background-image: url("./assets/images/pattern.png");
   overflow-x: hidden;
 }
 
@@ -53,20 +60,7 @@ body {
 
 .hero-section {
   display: block;
-  /* background-color: var(--background-color-primary); */
-  height: 60rem;
   margin: 3rem;
-}
-
-.hero-section::after {
-  background-image: url("./assets/images/pattern.png");
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
 }
 
 .hero-section-title {
@@ -123,172 +117,166 @@ body {
 .hero-section-hbars-container > div {
   /* clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%); */
   position: relative;
+  width: 30%;
   z-index: 888;
-  margin-bottom: 1rem;
-  height: 5rem;
+  margin-bottom: 0.2rem;
+  height: 1rem;
   background-color: var(--background-color-secondary);
 }
 
-@keyframes bar-1 {
+@keyframes bar {
   0% {
-    width: 40%;
-  }
-  25% {
-    width: 20%;
+    width: 30%;
   }
   50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
+    width: 50%;
   }
   100% {
-    width: 40%;
-  }
-}
-@keyframes bar-2 {
-  0% {
-    width: 40%;
-  }
-  25% {
-    width: 20%;
-  }
-  50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: 40%;
-  }
-}
-@keyframes bar-3 {
-  0% {
-    width: 40%;
-  }
-  25% {
-    width: 20%;
-  }
-  50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: 40%;
+    width: 30%;
   }
 }
 
 .hero-section-hbars-container > div:nth-child(1) {
-  animation: bar-1 14s infinite;
+  animation: bar var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.2s;
+  height: 0.8rem;
 }
 
 .hero-section-hbars-container > div:nth-child(2) {
-  animation: bar-3 10s infinite;
+  animation: bar var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.4s;
+  height: 0.7rem;
 }
 
 .hero-section-hbars-container > div:nth-child(3) {
-  animation: bar-2 7s infinite;
+  animation: bar var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.6s;
+  height: 0.5rem;
 }
 
 .hero-section-hbars-container > div:nth-child(4) {
-  animation: bar-1 3s infinite;
+  animation: bar var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.8s;
+  height: 0.3rem;
 }
 
 .hero-section-hbars-container > div:nth-child(5) {
-  animation: bar-2 6s infinite;
+  animation: bar var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 1s;
+  height: 0.2rem;
 }
 
 .hero-section-hbars-container-inverse {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   width: 100%;
   left: 3rem;
-  top: -12rem;
+  top: 0;
 }
 
 .hero-section-hbars-container-inverse > div {
   float: right;
   position: relative;
+  width: 50%;
   /* clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%); */
   z-index: 887;
-  margin-bottom: 1rem;
-  height: 5rem;
+  margin-bottom: 0.2rem;
+  height: 1rem;
   background-color: var(--background-color-secondary);
 }
 
 .hero-section-hbars-container-inverse > div:nth-child(1) {
-  animation: bar-3-rev 7s infinite;
+  animation: bar-rev var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.2s;
+  height: 0.8rem;
 }
 
 .hero-section-hbars-container-inverse > div:nth-child(2) {
-  animation: bar-2-rev 10s infinite;
+  animation: bar-rev var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.4s;
+  height: 0.7rem;
 }
 
 .hero-section-hbars-container-inverse > div:nth-child(3) {
-  animation: bar-1-rev 14s infinite;
+  animation: bar-rev var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.6s;
+  height: 0.5rem;
 }
 
 .hero-section-hbars-container-inverse > div:nth-child(4) {
-  animation: bar-3-rev 10s infinite;
+  animation: bar-rev var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 0.8s;
+  height: 0.3rem;
 }
 
 .hero-section-hbars-container-inverse > div:nth-child(5) {
-  animation: bar-1-rev 14s infinite;
+  animation: bar-rev var(--bar-aniamtion-duration) infinite ease-in-out;
+  animation-delay: 1s;
+  height: 0.2rem;
 }
 
-@keyframes bar-1-rev {
+@keyframes bar-rev {
   0% {
-    width: 100%;
-  }
-  25% {
-    width: 20%;
+    width: 50%;
   }
   50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
+    width: 30%;
   }
   100% {
-    width: 100%;
+    width: 50%;
   }
 }
-@keyframes bar-2-rev {
-  0% {
-    width: 40%;
-  }
-  25% {
-    width: 20%;
-  }
-  50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: 40%;
+
+/** 
+* SHIP SELECTION
+**/
+
+.ship-selection-section {
+  padding: 0 1.5rem;
+  display: grid;
+
+  @media (min-width: 1300px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@keyframes bar-3-rev {
-  0% {
-    width: 40%;
-  }
-  25% {
-    width: 20%;
-  }
-  50% {
-    width: 6%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: 40%;
-  }
+
+/** 
+* SHIP CARD
+**/
+
+.ship-card-container {
+  margin: 0 1.5rem;
+  border-bottom: 1px solid var(--text-color-primary);
+  margin-bottom: 3rem;
+}
+
+.ship-card-container > h3 {
+  margin-left: 0.5rem;
+  font-family: "WO3Angular";
+  color: var(--text-color-primary);
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+.ship-card-content-container {
+  background-color: var(--background-color-secondary);
+  display: flex;
+}
+
+.ship-card-image {
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+}
+
+.ship-card-text {
+  border-left: 1px solid var(--text-color-primary);
+  margin: 1rem;
+  padding: 1rem;
+  font-family: "FX300Angular";
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: var(--text-color-primary);
 }
