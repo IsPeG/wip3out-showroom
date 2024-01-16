@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib Icarus.mtl
+mtllib Icaras.mtl
 g default
 v -0.240000 0.730000 -3.060000
 v -0.160000 0.870000 -2.980000

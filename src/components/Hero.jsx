@@ -5,7 +5,7 @@ import goteki45Icon from "../assets/images/teams_icons/goteki45.png";
 import auricomIcon from "../assets/images/teams_icons/auricom.png";
 import piranhaIcon from "../assets/images/teams_icons/piranha.png";
 import qirexIcon from "../assets/images/teams_icons/qirex.png";
-import agsystemsIcon from "../assets/images/teams_icons/agsystems.png";
+import agsystemsIcon from "../assets/images/teams_icons/ag_systems.png";
 import assegaiIcon from "../assets/images/teams_icons/assegai.png";
 import icarasIcon from "../assets/images/teams_icons/icaras.png";
 

@@ -12,6 +12,11 @@
   --bar-aniamtion-duration: 3s;
 }
 
+::selection {
+  color: var(--text-color-primary);
+  background-color: #312f2b;
+}
+
 @font-face {
   font-family: "WO3";
   src: url("assets/fonts/WO3.ttf");
@@ -253,6 +258,9 @@ body {
 }
 
 .ship-card-container > h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-left: 0.5rem;
   font-family: "WO3Angular";
   color: var(--text-color-primary);
@@ -269,14 +277,68 @@ body {
   width: 300px;
   height: 300px;
   margin: 5px;
+
+  user-select: none;
+
+  background: var(--background-color-secondary);
+  background-image: radial-gradient(
+    var(--background-color-primary) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+  animation: background-anim 4s infinite linear;
+}
+
+@keyframes background-anim {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 20px 20px;
+  }
+}
+
+.ship-card-right-part {
+  font-family: "FX300Angular";
+  color: var(--text-color-primary);
+  border-left: 1px solid var(--text-color-primary);
+  display: flex;
+  flex-direction: column;
 }
 
 .ship-card-text {
-  border-left: 1px solid var(--text-color-primary);
-  margin: 1rem;
-  padding: 1rem;
-  font-family: "FX300Angular";
+  margin: 0.7rem;
+  padding: 0.7rem;
   font-size: 1rem;
   letter-spacing: 0.1rem;
-  color: var(--text-color-primary);
+}
+
+.ship-card-team-colors {
+  margin: 0.7rem;
+  padding: 0.7rem;
+}
+
+.ship-card-team-color {
+  width: 5rem;
+  height: 1.3rem;
+  clip-path: polygon(
+    0 0,
+    83% 0,
+    83% 15%,
+    89% 15%,
+    89% 22%,
+    100% 22%,
+    100% 85%,
+    100% 100%,
+    85% 100%,
+    15% 100%,
+    0 100%,
+    0% 85%
+  );
+  transition-duration: 0.2s;
+  transition-property: width;
+}
+
+.ship-card-team-color:hover {
+  width: 5.5rem;
 }
